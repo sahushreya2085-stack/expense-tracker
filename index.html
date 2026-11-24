@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>💰 Expense Tracker</h1>
+            <p>Manage Your Money Smartly</p>
+        </header>
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total Income</h3>
+                <h2 id="totalIncome">₹0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Expense</h3>
+                <h2 id="totalExpense">₹0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Balance</h3>
+                <h2 id="totalBalance">₹0</h2>
+            </div>
+
+        </section>
+
+        <!-- Add Transaction -->
+
+        <section class="form-section">
+
+            <h2>Add Transaction</h2>
+
+            <form id="transactionForm">
+
+                <label>Transaction Type</label>
+
+                <select id="type" required>
+                    <option value="">Select Type</option>
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+
+
+                <label>Description</label>
+
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Enter description"
+                    required
+                >
+
+
+                <label>Amount (₹)</label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+
+                <label>Category</label>
+
+                <select id="category" required>
+
+                    <option value="">Select Category</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Food">Food</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Education">Education</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Transaction
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </section>
+
+
+        <!-- Transaction History -->
+
+        <section class="history">
+
+            <h2>Transaction History</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody id="transactionList">
+                    <!-- Data will come from MySQL -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
